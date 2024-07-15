@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 :root {
+  font-family: "Inter", sans-serif;
   --font-size-heading: 18px;
+  --font-size-para: 14px;
   --font-weight-heading: 600;
   --font-color-heading: #013241;
 }

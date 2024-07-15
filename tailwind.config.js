@@ -5,6 +5,7 @@ export default {
     extend: {
       fontSize: {
         18: "var(--font-size-heading)",
+        14: "var(--font-size-para)"
       },
       fontWeight: {
         head: "var(--font-weight-heading)",
