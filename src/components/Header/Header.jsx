@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex space-x-2">
           <Dropdown />
-          <div className="flex space-x-2 hidden xl:flex">
+          <div className="space-x-2 hidden xl:flex">
             {years?.map((year) => (
               <YearButton
                 key={year}

@@ -29,25 +29,40 @@ const TaskCategoryName = () => {
           opacity: isOpen ? 1 : 0,
         }}
       >
-        <div className="mt-4 text-sm">
+        <div className="mt-4 text-sm flex flex-wrap">
           <p className="text-14">
-            Employee ID: <span className="font-bold mr-2">9876</span> &mdash;
-            Employee Name: <span className="font-bold mr-2">John Smith</span>{" "}
+            Employee ID: <span className="font-bold mr-2">9876</span>
+          </p>{" "}
+          <p>
+            &mdash; Employee Name:{" "}
+            <span className="font-bold mr-2">John Smith</span>
+          </p>{" "}
+          <p>
             &mdash; Job Title:{" "}
-            <span className="font-bold mr-2">John Williams</span> &mdash; Line
-            Manager:{" "}
+            <span className="font-bold mr-2">John Williams</span>
+          </p>{" "}
+          <p>
+            &mdash; Line Manager:{" "}
             <a href="#" className="font-bold underline mr-2">
               Doc.pdf
             </a>{" "}
-            &mdash; Grade: <span className="font-bold mr-2">John Williams</span>{" "}
+          </p>
+          <p>
+            &mdash; Grade: <span className="font-bold mr-2">John Williams</span>
+          </p>
+          <p>
             &mdash; Department:{" "}
             <a href="#" className="font-bold underline mr-2">
               Doc.pdf
             </a>{" "}
+          </p>
+          <p>
             &mdash; Stage:{" "}
             <a href="#" className="font-bold underline mr-2">
               Doc.pdf
             </a>{" "}
+          </p>
+          <p>
             &mdash; Process Status:{" "}
             <a href="#" className="font-bold underline">
               Doc.pdf
