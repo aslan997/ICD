@@ -11,7 +11,7 @@ export default {
       },
       fontWeight: {
         head: "var(--font-weight-heading)",
-        500: "500"
+        500: "500",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -25,9 +25,14 @@ export default {
       },
       width: {
         // Custom width classes
-        35: '35%',
-        24: '24%',
-        41: '41%',
+        35: "35%",
+        24: "24%",
+        41: "41%",
+      },
+      borderColor: {
+        cace91: "#cace91",
+        c1efc8: "#c1efc8",
+        c9edfb: "#c9edfb",
       },
     },
   },
