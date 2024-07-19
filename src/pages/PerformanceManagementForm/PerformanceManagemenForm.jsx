@@ -7,11 +7,13 @@ import ObjectiveAndKpis from "./components/ObjectiveAndKpis";
 
 const PerformanceManagemenForm = () => {
   return (
-    <div className="container mx-auto">
+    <div className="px-4">
       <HeaderTitle />
-      <TaskCategoryName />
-      <Information />
-      <ObjectiveAndKpis />
+      <div className="container mx-auto">
+        <TaskCategoryName />
+        <Information />
+        <ObjectiveAndKpis />
+      </div>
     </div>
   );
 };

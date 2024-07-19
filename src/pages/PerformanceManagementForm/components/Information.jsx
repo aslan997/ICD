@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Arrow from "../../../assets/arrow-accordion.png";
 
 const Information = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,22 +13,10 @@ const Information = () => {
       >
         <p className="text-lg font-semibold text-yellow-600">Information</p>
         <span
-          className={`text-yellow-600 transform transition-transform duration-300 ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          className="bg-accordionArrowSpanBtn w-26 h-26 rounded-full flex items-center justify-center transform transition-transform duration-300"
+          style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.293 12.707a1 1 0 010-1.414L10 6.586l4.707 4.707a1 1 0 01-1.414 1.414L10 9.414l-3.293 3.293a1 1 0 01-1.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <img src={Arrow} className="h-2.5 w-2.5" />
         </span>
       </div>
       <div

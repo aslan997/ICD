@@ -25,7 +25,7 @@ const Dropdown = () => {
     <div className="relative dropdown" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center bg-white text-gray-700 py-2 px-4 rounded-md shadow-md focus:outline-none"
+        className="flex items-center bg-white text-14 py-2 px-4 rounded-md shadow-md focus:outline-none"
       >
         <span className="mr-2">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -53,22 +53,13 @@ const Dropdown = () => {
       </button>
       {isOpen && (
         <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-          >
+          <a href="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
             Option 1
           </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-          >
+          <a href="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
             Option 2
           </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-          >
+          <a href="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
             Option 3
           </a>
         </div>

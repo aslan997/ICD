@@ -1,11 +1,15 @@
 import React from "react";
 
-const YearButton = ({ year, isActive }) => {
-  const buttonClasses = `px-8 rounded-full ${
-    isActive ? "bg-green-500 text-white" : "bg-gray-200 text-gray-700"
+const YearButton = ({ year, isActive, onClick }) => {
+  const buttonClasses = `text-14 px-8 h-headerYearButton rounded-full ${
+    isActive ? "bg-35a989 text-white" : "bg-6c757d text-white"
   }`;
 
-  return <button className={buttonClasses}>{year}</button>;
+  return (
+    <button className={buttonClasses} onClick={onClick}>
+      {year}
+    </button>
+  );
 };
 
 export default YearButton;

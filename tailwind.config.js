@@ -13,6 +13,11 @@ export default {
         head: "var(--font-weight-heading)",
         500: "500",
       },
+      backgroundColor: {
+        "35a989": "#35a989",
+        "6c757d": "#6c757d",
+        accordionArrowSpanBtn: "#BA973B",
+      },
       colors: {
         primary: "var(--font-color-heading)",
         cayon: "#c9edfb",
@@ -28,11 +33,16 @@ export default {
         35: "35%",
         24: "24%",
         41: "41%",
+        26: "26px",
       },
       borderColor: {
         cace91: "#cace91",
         c1efc8: "#c1efc8",
         c9edfb: "#c9edfb",
+      },
+      height: {
+        headerYearButton: "30px",
+        26: "26px",
       },
     },
   },
