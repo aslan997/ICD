@@ -5,7 +5,7 @@ import YERTable from "./YERTable";
 
 const KPITable = () => {
   return (
-    <div className="rounded-md overflow-hidden">
+    <div className="rounded-md mb-4">
       <table className="min-w-full">
         <thead>
           <tr className="bg-cayon">
@@ -22,15 +22,9 @@ const KPITable = () => {
         </thead>
         <tbody>
           <tr>
-            <td className="align-top p-0">
-              <KPIInformationTable />
-            </td>
-            <td className="align-top p-0">
-              <MYRTable />
-            </td>
-            <td className="align-top p-0">
-              <YERTable />
-            </td>
+            <KPIInformationTable />
+            <MYRTable />
+            <YERTable />
           </tr>
         </tbody>
       </table>

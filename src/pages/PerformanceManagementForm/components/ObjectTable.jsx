@@ -3,7 +3,7 @@ import KPITable from "./KPITable";
 
 const ObjectTable = () => {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mb-4">
       <table className="min-w-full ">
         <thead>
           <tr className="bg-cayon border-b">
@@ -29,6 +29,7 @@ const ObjectTable = () => {
           </tr>
           <tr className="bg-alabaster border-b">
             <td colSpan="3" className=" p-4">
+              <KPITable />
               <KPITable />
             </td>
           </tr>
