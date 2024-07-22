@@ -12,7 +12,7 @@ const ObjectiveAndKpis = () => {
         className="flex justify-between items-center cursor-pointer p-4"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-lg font-semibold text-yellow-600">
+        <p className="text-lg font-semibold text-gold">
           Objective & KPIs
         </p>
         <span

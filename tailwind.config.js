@@ -27,6 +27,7 @@ export default {
         frostee: "#e1f6e5",
         lilyWhite: "#e5f6fd",
         alabaster: "#f8fcff",
+        gold: "#BA973B",
       },
       width: {
         // Custom width classes
@@ -43,6 +44,9 @@ export default {
       height: {
         headerYearButton: "30px",
         26: "26px",
+      },
+      borderRadius: {
+        inputsm: "0.25rem",
       },
     },
   },

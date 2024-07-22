@@ -11,7 +11,7 @@ const TaskCategoryName = () => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-lg font-semibold text-yellow-600">
+        <p className="text-lg font-semibold text-gold">
           Task Category Name Here
         </p>
         <span

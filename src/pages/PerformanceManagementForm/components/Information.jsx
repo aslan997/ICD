@@ -11,7 +11,7 @@ const Information = () => {
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-lg font-semibold text-yellow-600">Information</p>
+        <p className="text-lg font-semibold text-gold">Information</p>
         <span
           className="bg-accordionArrowSpanBtn w-26 h-26 rounded-full flex items-center justify-center transform transition-transform duration-300"
           style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}
