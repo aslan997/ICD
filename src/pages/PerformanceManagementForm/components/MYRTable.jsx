@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import EditableCell from "../../../components/EditableCell/EditableCell";
 
 const MYRTable = () => {
   const contentRef = useRef(null);
@@ -22,6 +23,11 @@ const MYRTable = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Save value after editing
+  const handleSave = (newValue) => {
+    console.log("Value saved:", newValue);
+  };
+
   return (
     <td className="align-top p-0" ref={contentRef}>
       <table
@@ -40,7 +46,12 @@ const MYRTable = () => {
         <tbody>
           <tr>
             <td className="p-2 text-14 border border-c1efc8">
-              ed do eiusmod tempor incididunt ut labore et
+              <EditableCell
+                initialValue="ed do eiusmod tempor incididunt ut labore et"
+                onSave={handleSave}
+                title="AA"
+                type="textarea"
+              />
             </td>
           </tr>
           <tr>
@@ -50,7 +61,12 @@ const MYRTable = () => {
           </tr>
           <tr>
             <td className="p-2 text-14 border border-c1efc8">
-              ed do eiusmod tempor incididunt ut labore et
+              <EditableCell
+                initialValue="ed do eiusmod tempor incididunt ut labore et"
+                onSave={handleSave}
+                title="EMP Comments"
+                type="textarea"
+              />
             </td>
           </tr>
           <tr>
@@ -60,7 +76,12 @@ const MYRTable = () => {
           </tr>
           <tr>
             <td className="p-2 text-14 border border-c1efc8">
-              ed do eiusmod tempor incididunt ut labore et
+              <EditableCell
+                initialValue="ed do eiusmod tempor incididunt ut labore et"
+                onSave={handleSave}
+                title="LM Comments"
+                type="textarea"
+              />
             </td>
           </tr>
         </tbody>

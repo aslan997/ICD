@@ -13,7 +13,7 @@ const Information = () => {
       >
         <p className="text-lg font-semibold text-gold">Information</p>
         <span
-          className="bg-accordionArrowSpanBtn w-26 h-26 rounded-full flex items-center justify-center transform transition-transform duration-300"
+          className="bg-gold w-26 h-26 rounded-full flex items-center justify-center transform transition-transform duration-300"
           style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}
         >
           <img src={Arrow} className="h-2.5 w-2.5" />

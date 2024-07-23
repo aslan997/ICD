@@ -1,17 +1,54 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { Icon } from "@iconify/react";
 
 const EditableCell = ({ initialValue, onSave, title, type }) => {
+  // State to track if the cell is in editing mode
   const [isEditing, setIsEditing] = useState(false);
+  // State to store the current value of the cell
   const [value, setValue] = useState(initialValue);
+  // State to temporarily store the value during editing
   const [tempValue, setTempValue] = useState(initialValue);
-  const inputRef = useRef(null);
+  // State to store the position of the editor popup
+  const [position, setPosition] = useState({ left: 0, top: 0 });
 
-  const handleEdit = () => {
+  const inputRef = useRef(null); // Reference to the input element
+  const wrapperRef = useRef(null); // Reference to the cell wrapper element
+  const spanRef = useRef(null); // Reference to the span inside cell
+
+  const portalRoot = document.getElementById("portal-root"); // Reference to the portal root element
+
+  // Function to update the position of the editor popup
+  const updatePosition = useCallback(() => {
+    if (!spanRef?.current) return;
+
+    const rect = spanRef?.current?.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate left and top position based on cell's position and viewport size
+    let left = rect.left + rect.width;
+    let top = rect.top;
+
+    // Adjust position if the popup overflows the viewport
+    if (left + 200 > viewportWidth) {
+      left = rect.left - 200;
+    }
+    if (top + 200 > viewportHeight) {
+      top = rect.top - 115;
+    }
+
+    setPosition({ left, top });
+  }, []);
+
+  // Function to handle the click event for editing the cell
+  const handleEdit = (e) => {
+    updatePosition();
     setIsEditing(true);
     setTempValue(value);
   };
 
+  // Function to handle the save action
   const handleSave = () => {
     setValue(tempValue);
     setIsEditing(false);
@@ -20,25 +57,53 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
     }
   };
 
+  // Function to handle the cancel action
   const handleCancel = () => {
     setIsEditing(false);
     setTempValue(value);
   };
 
-  // Radio options for testing
+  // Function to handle clicks outside the editor popup
+  const handleClickOutside = (event) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setIsEditing(false);
+    }
+  };
+
+  // Effect to add/remove event listeners for scroll, resize, and click outside events
+  useEffect(() => {
+    if (isEditing) {
+      window.addEventListener("scroll", updatePosition);
+      window.addEventListener("resize", updatePosition);
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", updatePosition);
+      window.removeEventListener("resize", updatePosition);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isEditing, updatePosition]);
+
+  // Options for radio buttons (for testing purposes)
   const radioOptions = [
     { value: "option1", label: "Option 1" },
     { value: "option2", label: "Option 2" },
     { value: "option3", label: "Option 3" },
   ];
 
-  // Select options for testing
+  // Options for select dropdown (for testing purposes)
   const options = [
     { value: "option1", label: "Option 1" },
     { value: "option2", label: "Option 2" },
     { value: "option3", label: "Option 3" },
   ];
 
+  // Function to render the appropriate input based on the type prop
   const renderInput = () => {
     switch (type) {
       case "field":
@@ -56,8 +121,9 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
           <textarea
             ref={inputRef}
             value={tempValue}
+            rows={8}
             onChange={(e) => setTempValue(e.target.value)}
-            className="border p-1 mr-2 mb-4 h-24" // Adjust height as needed
+            className="border p-1 mr-2 mb-4 h-24"
           />
         );
       case "select":
@@ -97,34 +163,44 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
   };
 
   return (
-    <div className="relative">
-      <span onClick={handleEdit} className="cursor-pointer">
+    <div className="relative" ref={wrapperRef}>
+      {/* Cell value that can be clicked to edit */}
+      <span onClick={handleEdit} className="cursor-pointer" ref={spanRef}>
         {value}
       </span>
-      {isEditing && (
-        <div className="absolute top-0 left-full min-w-36 ml-2 bg-white border border-gray-300 rounded shadow-lg flex flex-col items-start">
-          <div className="w-full border-b mb-2 py-1 px-4 bg-gray-200">
-            <p>{`Please enter ${title}`}</p>
-          </div>
-          <div className="p-2 px-4">
-            {renderInput()}
-            <div>
-              <button
-                onClick={handleSave}
-                className="bg-green-500 text-white p-1 rounded mr-1"
-              >
-                <Icon icon="material-symbols:check" />
-              </button>
-              <button
-                onClick={handleCancel}
-                className="bg-red-500 text-white p-1 rounded"
-              >
-                <Icon icon="material-symbols:close" />
-              </button>
+      {isEditing &&
+        portalRoot &&
+        createPortal(
+          // Editor popup positioned based on state
+          <div
+            className="fixed z-1 min-w-36 bg-white border border-gray-300 rounded shadow-lg flex flex-col items-start text-14"
+            style={{ left: position.left, top: position.top }}
+          >
+            <div className="w-full border-b mb-2 py-1 px-4 bg-gray-200">
+              <p>{`Please enter ${title}`}</p>
             </div>
-          </div>
-        </div>
-      )}
+            <div className="p-2 px-4">
+              {renderInput()}
+              <div>
+                {/* Save button */}
+                <button
+                  onClick={handleSave}
+                  className="bg-green-500 text-white p-1 rounded mr-1"
+                >
+                  <Icon icon="material-symbols:check" />
+                </button>
+                {/* Cancel button */}
+                <button
+                  onClick={handleCancel}
+                  className="bg-red-500 text-white p-1 rounded"
+                >
+                  <Icon icon="material-symbols:close" />
+                </button>
+              </div>
+            </div>
+          </div>,
+          portalRoot
+        )}
     </div>
   );
 };

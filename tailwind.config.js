@@ -16,7 +16,7 @@ export default {
       backgroundColor: {
         "35a989": "#35a989",
         "6c757d": "#6c757d",
-        accordionArrowSpanBtn: "#BA973B",
+        gold: "#BA973B",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -48,6 +48,14 @@ export default {
       borderRadius: {
         inputsm: "0.25rem",
       },
+      zIndex: {
+        1: "1",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ["checked"], // Enable checked variant for backgroundColor
     },
   },
   plugins: [],

@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import React, { useState, useRef, useEffect } from "react";
 
 const Dropdown = () => {
@@ -27,29 +28,18 @@ const Dropdown = () => {
         onClick={toggleDropdown}
         className="flex items-center bg-white text-14 py-2 px-4 rounded-md shadow-md focus:outline-none"
       >
-        <span className="mr-2">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        <span className="mr-1">
+        <Icon icon="charm:menu-hamburger"/>
+          {/* <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
               d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
               clipRule="evenodd"
             />
-          </svg>
+          </svg> */}
         </span>
         Menu
-        <svg
-          className="ml-2 w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <Icon icon="solar:alt-arrow-down-bold" className="mt-1 ml-1"/>
       </button>
       {isOpen && (
         <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">

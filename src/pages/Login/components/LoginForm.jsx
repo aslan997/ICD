@@ -31,7 +31,7 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[url('/assets/bg.jpg')] flex flex-col items-center justify-center bg-cover bg-no-repeat">
+    <div className="min-h-screen bg-[url('/assets/bg.jpg')] flex flex-col items-center justify-center bg-cover bg-no-repeat p-2">
       <div className="max-w-md w-full p-6 bg-white rounded-inputsm shadow-lg">
         <div className="text-center">
           <a href="" className="block my-4">
@@ -87,7 +87,7 @@ const LoginForm = () => {
               <input
                 type="checkbox"
                 id="customControlInline"
-                className="form-check-input h-4 w-4 text-gold transition duration-150 ease-in-out"
+                className="form-check-input accent-gold h-4 w-4 transition duration-150 ease-in-out"
               />
               <label
                 htmlFor="customControlInline"
@@ -98,7 +98,7 @@ const LoginForm = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary w-full md:w-auto bg-accordionArrowSpanBtn text-white py-2 px-4 rounded-inputsm text-14"
+              className="btn btn-primary w-auto bg-gold text-white py-2 px-4 rounded-inputsm text-14"
             >
               {loading ? "Logging in..." : "Log In"}
             </button>

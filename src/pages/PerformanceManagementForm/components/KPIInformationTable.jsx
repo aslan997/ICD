@@ -55,31 +55,94 @@ const KPIInformationTable = () => {
                 initialValue="43623"
                 onSave={handleSave}
                 title="KPI Code"
-                type="radio"
+                type="field"
               />
             </td>
             <td className="px-4 py-2 text-14 border border-c9edfb" rowSpan="4">
-              ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud
+              <EditableCell
+                initialValue=" ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud"
+                onSave={handleSave}
+                title="KPI"
+                type="textarea"
+              />
             </td>
             <td className="px-4 py-2 text-14 border border-c9edfb">
-              Target Type
+              <EditableCell
+                initialValue="Target Type"
+                onSave={handleSave}
+                title="Weightage"
+                type="field"
+              />
             </td>
-            <td className="px-4 py-2 text-14 border border-c9edfb">Lorem</td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Lorem"
+                onSave={handleSave}
+                title="15%"
+                type="field"
+              />
+            </td>
           </tr>
           <tr className="">
             <td className="px-4 py-2 text-14 border border-c9edfb">
-              Threshold
+              <EditableCell
+                initialValue="Threshold"
+                onSave={handleSave}
+                title="Weightage"
+                type="field"
+              />
             </td>
-            <td className="px-4 py-2 text-14 border border-c9edfb">Lorem</td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Lorem"
+                onSave={handleSave}
+                title="15%"
+                type="field"
+              />
+            </td>
           </tr>
           <tr className="">
-            <td className="px-4 py-2 text-14 border border-c9edfb">Target</td>
-            <td className="px-4 py-2 text-14 border border-c9edfb">Lorem</td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Target"
+                onSave={handleSave}
+                title="Weightage"
+                type="field"
+              />
+            </td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Lorem"
+                onSave={handleSave}
+                title="15%"
+                type="field"
+              />
+            </td>
           </tr>
           <tr className="">
-            <td className="px-4 py-2 text-14 border border-c9edfb">Stretch</td>
-            <td className="px-4 py-2 text-14 border border-c9edfb">Lorem</td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Stretch"
+                onSave={handleSave}
+                title="Weightage"
+                type="field"
+              />
+            </td>
+            <td className="px-4 py-2 text-14 border border-c9edfb">
+              {" "}
+              <EditableCell
+                initialValue="Lorem"
+                onSave={handleSave}
+                title="15%"
+                type="field"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
