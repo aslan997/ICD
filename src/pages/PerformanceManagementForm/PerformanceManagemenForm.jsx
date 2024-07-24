@@ -10,7 +10,7 @@ import LearningAndDevelopmentPlanTable from "./components/LearningAndDevelopment
 
 const PerformanceManagemenForm = () => {
   return (
-    <div className="px-4 pb-4">
+    <div className="px-4 py-16">
       <HeaderTitle />
       <div className=" mx-auto">
         <TaskCategoryName />

@@ -12,7 +12,7 @@ const Header = () => {
   const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028];
 
   return (
-    <header className="bg-white p-4 shadow-md">
+    <header className="bg-white p-4 shadow-md fixed w-screen z-10">
       <div className=" mx-auto flex items-center justify-between">
         <div className="flex space-x-2">
           <Dropdown />

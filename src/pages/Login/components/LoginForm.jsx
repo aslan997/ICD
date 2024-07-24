@@ -31,7 +31,7 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[url('/assets/bg.jpg')] flex flex-col items-center justify-center bg-cover bg-no-repeat p-2">
+    <div className="min-h-screen bg-loginScreenBg flex flex-col items-center justify-center bg-cover bg-no-repeat p-2">
       <div className="max-w-md w-full p-6 bg-white rounded-inputsm shadow-lg">
         <div className="text-center">
           <a href="" className="block my-4">
@@ -44,8 +44,7 @@ const LoginForm = () => {
           </a>
         </div>
         <div className="text-center mb-6">
-          <h4 className="text-14 text-lg">Welcome Back!</h4>
-          <p className="text-14">Sign in to continue to ICD portal.</p>
+          <p className="text-14">Sign in to continue.</p>
         </div>
         <form onSubmit={formik.handleSubmit} className="space-y-4 mb-6">
           <div>
@@ -103,14 +102,14 @@ const LoginForm = () => {
               {loading ? "Logging in..." : "Log In"}
             </button>
           </div>
-          <div className="text-start">
+          {/* <div className="text-start">
             <a
               href="pages-recoverpw.html"
               className="text-14 hover:text-gray-900"
             >
               <i className="mdi mdi-lock"></i> Forgot your password?
             </a>
-          </div>
+          </div> */}
         </form>
         {error && <div className="text-red-500 text-center mt-4">{error}</div>}
       </div>

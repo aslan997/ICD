@@ -6,7 +6,7 @@ const Information = () => {
   const contentRef = useRef(null);
 
   return (
-    <div className="border rounded-lg p-4 mb-4">
+    <div className="shadow-card rounded p-4 mb-4">
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}

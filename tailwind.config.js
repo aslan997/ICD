@@ -18,6 +18,7 @@ export default {
         "6c757d": "#6c757d",
         gold: "#BA973B",
         tableHeader: "#f9f9f9",
+        loginScreenBg: "#363232"
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -38,6 +39,7 @@ export default {
         24: "24%",
         41: "41%",
         26: "26px",
+        100: "100px"
       },
       borderColor: {
         cace91: "#cace91",

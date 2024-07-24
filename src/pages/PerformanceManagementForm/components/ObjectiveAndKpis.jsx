@@ -7,7 +7,7 @@ const ObjectiveAndKpis = () => {
   const contentRef = useRef(null);
 
   return (
-    <div className="border rounded-lg mb-4">
+    <div className="shadow-card rounded mb-4">
       <div
         className="flex justify-between items-center cursor-pointer p-4"
         onClick={() => setIsOpen(!isOpen)}

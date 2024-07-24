@@ -1,25 +1,34 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 
 const CompetenciesTable = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [height, setHeight] = useState("0px");
   const contentRef = useRef(null);
 
   const toggleTable = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
-      console.log(contentRef?.current?.style?.height);
-    } else {
-      contentRef.current.style.height = "0px";
+  const updateHeight = () => {
+    if (contentRef.current) {
+      setHeight(isOpen ? `${contentRef.current.scrollHeight + 20}px` : "0px");
     }
+  };
+
+  useLayoutEffect(() => {
+    updateHeight();
+    // Ensure that the height is recalculated when `employees` change
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleResize = () => updateHeight();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="p-4 mb-4 shadow-md rounded-md">
+    <div className="p-4 mb-4 rounded shadow-card">
       <div
         className="flex items-center font-bold text-lg cursor-pointer"
         onClick={toggleTable}
@@ -28,20 +37,24 @@ const CompetenciesTable = () => {
         <span className="text-gold font-normal text-base ml-2">
           Proficiency Level: Applying{" "}
         </span>
-        <Icon
-          icon={isOpen ? "fe:arrow-up" : "fe:arrow-down"}
-          className="ml-2 font-bold  hover:text-gold text-arrowIconColor"
-        />
+        <span className="ml-1 cursor-pointer" onClick={toggleTable}>
+          <Icon
+            icon={isOpen ? "fe:arrow-up" : "fe:arrow-down"}
+            className="transition-transform duration-300 text-arrowIconColor"
+          />
+        </span>
       </div>
 
       <div
-        ref={contentRef}
-        className={`min-w-full mt-4 overflow-x-auto transition-height duration-500 ease-in-out`}
+        className={`min-w-full overflow-x-auto overflow-y-hidden transition-height duration-500 ease-in-out`}
         style={{
-          height: `${contentRef?.current?.style?.height}`,
+          height: isOpen ? `${height}` : "0px",
         }}
       >
-        <table className="min-w-[700px] md:min-w-full bg-white border divide-y divide-gray-200  overflow-scroll">
+        <table
+          ref={contentRef}
+          className="min-w-[700px] md:min-w-full bg-white border divide-y divide-gray-200  overflow-scroll mt-3"
+        >
           <thead>
             <tr className="bg-tableHeader">
               <th
@@ -132,11 +145,11 @@ const CompetenciesTable = () => {
             <tr>
               <td
                 colSpan="2"
-                className="px-4 py-2 font-bold border-t border-gray-200"
+                className="px-4 py-2 font-bold border-t border-gray-200 text-14 font-head"
               >
                 Total Competencies Weightage
               </td>
-              <td className="px-4 py-2 font-bold border-t border-gray-200">
+              <td className="px-4 py-2 font-bold border-t border-gray-200 text-14 font-head">
                 100%
               </td>
               <td
