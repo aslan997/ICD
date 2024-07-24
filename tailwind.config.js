@@ -17,6 +17,7 @@ export default {
         "35a989": "#35a989",
         "6c757d": "#6c757d",
         gold: "#BA973B",
+        tableHeader: "#f9f9f9",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -28,6 +29,7 @@ export default {
         lilyWhite: "#e5f6fd",
         alabaster: "#f8fcff",
         gold: "#BA973B",
+        tableBorder: "#dee2e6",
       },
       width: {
         // Custom width classes
@@ -50,6 +52,9 @@ export default {
       },
       zIndex: {
         1: "1",
+      },
+      boxShadow: {
+        card: "0 2px 3px 2px rgba(0, 0, 0, 0.08)",
       },
     },
   },
