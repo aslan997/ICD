@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="bg-white p-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className=" mx-auto flex items-center justify-between">
         <div className="flex space-x-2">
           <Dropdown />
           <div className="space-x-2 hidden xl:flex">

@@ -9,7 +9,7 @@ const PerformanceManagemenForm = () => {
   return (
     <div className="px-4">
       <HeaderTitle />
-      <div className="container mx-auto">
+      <div className=" mx-auto">
         <TaskCategoryName />
         <Information />
         <ObjectiveAndKpis />
