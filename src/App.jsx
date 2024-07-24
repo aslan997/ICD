@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import PerformanceManagemenForm from "./pages/PerformanceManagementForm/PerformanceManagemenForm";
 import Login from "./pages/Login/Login";
+import Employees from "./pages/Employees/Employees";
 
 function App() {
   return (
@@ -16,6 +17,16 @@ function App() {
           element={
             <ProtectedRoute>
               <PerformanceManagemenForm />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for employees */}
+        <Route
+          path="/employee"
+          element={
+            <ProtectedRoute>
+              <Employees />
             </ProtectedRoute>
           }
         />
