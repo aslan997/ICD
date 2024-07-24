@@ -8,13 +8,13 @@ import LearningAndDevelopmentPlanTable from "./components/LearningAndDevelopment
 
 const PerformanceManagemenForm = () => {
   return (
-    <div className="px-4">
+    <div className="px-4 pb-4">
       <HeaderTitle />
       <div className=" mx-auto">
         <TaskCategoryName />
         <Information />
         <ObjectiveAndKpis />
-        <LearningAndDevelopmentPlanTable/>
+        <LearningAndDevelopmentPlanTable />
       </div>
     </div>
   );

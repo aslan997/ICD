@@ -30,6 +30,7 @@ export default {
         alabaster: "#f8fcff",
         gold: "#BA973B",
         tableBorder: "#dee2e6",
+        arrowIconColor: "#949a9e",
       },
       width: {
         // Custom width classes

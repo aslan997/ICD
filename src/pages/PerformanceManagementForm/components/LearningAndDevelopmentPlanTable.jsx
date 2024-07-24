@@ -51,13 +51,13 @@ const LearningAndDevelopmentPlanTable = () => {
 
   return (
     <div className="rounded shadow-card py-4">
-      <div className="flex justify-between px-4 pb-3">
+      <div className="flex justify-between px-4">
         <h1 className="text-lg font-semibold text-gold inline-flex items-center">
           Learning and Development Plan{" "}
           <span className="ml-1 cursor-pointer" onClick={toggleTable}>
             <Icon
               icon={isOpen ? "fe:arrow-up" : "fe:arrow-down"}
-              className="transition-transform duration-300"
+              className="transition-transform duration-300 text-arrowIconColor"
             />
           </span>
         </h1>
@@ -71,12 +71,12 @@ const LearningAndDevelopmentPlanTable = () => {
       </div>
       <div
         ref={contentRef}
-        className={`px-4 overflow-hidden transition-height duration-500 ease-in-out`}
+        className={`px-4 overflow-x-auto overflow-y-hidden transition-height duration-500 ease-in-out`}
         style={{
           height: isOpen ? `${contentRef?.current?.style?.height}` : "0px",
         }}
       >
-        <table className="min-w-full divide-y divide-gray-200">
+        <table className="min-w-full divide-y divide-gray-200 mt-3">
           <thead>
             <tr className="bg-tableHeader">
               <th
