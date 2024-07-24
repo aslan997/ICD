@@ -43,7 +43,7 @@ const LearningAndDevelopmentPlanTable = () => {
   useEffect(() => {
     if (isOpen) {
       contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
-      console.log(contentRef?.current?.height)
+      console.log(contentRef?.current?.style?.height);
     } else {
       contentRef.current.style.height = "0px";
     }
@@ -72,7 +72,9 @@ const LearningAndDevelopmentPlanTable = () => {
       <div
         ref={contentRef}
         className={`px-4 overflow-hidden transition-height duration-500 ease-in-out`}
-        style={{ height: isOpen ? 'auto' : '0px' }}
+        style={{
+          height: isOpen ? `${contentRef?.current?.style?.height}` : "0px",
+        }}
       >
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
