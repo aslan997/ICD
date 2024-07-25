@@ -41,10 +41,10 @@ const EmployeeTable = () => {
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
       <h2 className="text-2xl text-gold font-bold my-4 ">Employees</h2>
       <EmployeeSearchBar />
-      <div className="rounded shadow-md p-5">
-        <table className="min-w-full border-collapse block md:table">
-          <thead className="block md:table-header-group">
-            <tr className="border border-gray-300 md:table-row">
+      <div className="rounded shadow-md overflow-x-auto p-5">
+        <table className="min-w-[1450px] lg:min-w-full border-collapse table">
+          <thead className="">
+            <tr className="border border-gray-300 table-row">
               {[
                 "Full Name",
                 "Email Address",
@@ -56,7 +56,7 @@ const EmployeeTable = () => {
               ].map((header) => (
                 <th
                   key={header}
-                  className=" border border-gray-300 text-left block md:table-cell bg-tableHeader relative"
+                  className=" border border-gray-300 text-left table-cell bg-tableHeader relative"
                 >
                   <div className="flex flex-col">
                     <span className="text-black border-b text-14 font-semibold p-1.5 border-tableBorder">
@@ -78,28 +78,28 @@ const EmployeeTable = () => {
               ))}
             </tr>
           </thead>
-          <tbody className="block md:table-row-group">
+          <tbody className="table-row-group">
             {employees.map((employee, index) => (
               <tr key={index} className="border border-gray-300 md:table-row">
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.name}
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.email}
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.id}
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.grade}
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.manager}
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   <span className="text-green-600">{employee.status}</span>
                 </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   <div className="flex items-center space-x-2">
                     <button className="bg-white shadow-md  p-1 rounded">
                       <Icon icon={"mage:edit-fill"} />
