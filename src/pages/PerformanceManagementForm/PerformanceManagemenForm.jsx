@@ -6,7 +6,8 @@ import Information from "./components/Information";
 import ObjectiveAndKpis from "./components/ObjectiveAndKpis";
 import CompetenciesTable from "./components/CompetenciesTable";
 import LearningAndDevelopmentPlanTable from "./components/LearningAndDevelopmentPlanTable";
-
+import EmployeeComents from "./components/EmployeeComents";
+import ActionButtons from "./components/ActionButtons";
 
 const PerformanceManagemenForm = () => {
   return (
@@ -18,6 +19,8 @@ const PerformanceManagemenForm = () => {
         <ObjectiveAndKpis />
         <CompetenciesTable />
         <LearningAndDevelopmentPlanTable />
+        <EmployeeComents />
+        <ActionButtons />
       </div>
     </div>
   );
