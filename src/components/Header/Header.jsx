@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Header = () => {
-  const [activeYear, setActiveYear] = useState(2022); // Default active year
+  const [activeYear, setActiveYear] = useState(2024); // Default active year
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -83,6 +83,7 @@ const Header = () => {
                   to="/profile"
                   className="w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 inline-flex items-center"
                   role="option"
+                  onClick={() => setIsOpen(false)}
                 >
                   <Icon
                     icon="heroicons:user-circle-16-solid"
@@ -95,6 +96,7 @@ const Header = () => {
                   to="/login"
                   className="w-full px-4 py-2 text-sm text-red-500 hover:bg-gray-100 dark:hover:bg-gray-700 inline-flex items-center"
                   role="option"
+                  onClick={() => setIsOpen(false)}
                 >
                   <Icon icon="tdesign:poweroff" className="mr-2" />
                   Logout

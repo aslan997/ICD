@@ -84,11 +84,14 @@ const LoginForm = () => {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="customControlInline"
-                className="form-check-input accent-gold h-4 w-4 transition duration-150 ease-in-out"
-              />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  id="customControlInline"
+                  className="form-check-input h-4 w-4 transition duration-150 ease-in-out"
+                />
+                <span></span>
+              </label>
               <label
                 htmlFor="customControlInline"
                 className="ml-2 block text-14"
