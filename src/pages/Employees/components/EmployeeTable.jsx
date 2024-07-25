@@ -33,6 +33,7 @@ const employees = [
 const EmployeeTable = () => {
   const pageNames = ["Dashboard", "Employees"];
   const pageUrls = ["/dashboard", "/employee"];
+ 
 
   return (
     <div className="bg-white px-4 py-24 rounded-md shadow-md">
