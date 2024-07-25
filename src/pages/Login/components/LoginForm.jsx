@@ -26,7 +26,7 @@ const LoginForm = () => {
     onSubmit: (values) => {
       // Handle form submission
       dispatch(loginUser(values));
-      navigate("/");
+      navigate("/objective/form");
     },
   });
 

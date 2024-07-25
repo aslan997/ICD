@@ -18,7 +18,7 @@ export default {
         "6c757d": "#6c757d",
         gold: "#BA973B",
         tableHeader: "#f9f9f9",
-        loginScreenBg: "#363232"
+        loginScreenBg: "#363232",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -32,7 +32,7 @@ export default {
         gold: "#BA973B",
         tableBorder: "#dee2e6",
         arrowIconColor: "#949a9e",
-        viewProfileIcon: "#adb5bd"
+        viewProfileIcon: "#adb5bd",
       },
       width: {
         // Custom width classes
@@ -40,7 +40,7 @@ export default {
         24: "24%",
         41: "41%",
         26: "26px",
-        100: "100px"
+        100: "100px",
       },
       borderColor: {
         cace91: "#cace91",

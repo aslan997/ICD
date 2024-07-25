@@ -3,6 +3,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import PerformanceManagemenForm from "./pages/PerformanceManagementForm/PerformanceManagemenForm";
 import Login from "./pages/Login/Login";
 import Employees from "./pages/Employees/Employees";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -13,7 +14,17 @@ function App() {
 
         {/** Route for performance management page */}
         <Route
-          path="/"
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for performance management page */}
+        <Route
+          path="/objective/form"
           element={
             <ProtectedRoute>
               <PerformanceManagemenForm />

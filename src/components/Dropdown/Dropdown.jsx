@@ -56,7 +56,7 @@ const Dropdown = () => {
             Dashboard
           </Link>
           <Link
-            to="#"
+            to="/objective/form"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >

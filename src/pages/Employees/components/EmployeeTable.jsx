@@ -35,7 +35,7 @@ const EmployeeTable = () => {
   const pageUrls = ["/dashboard", "/employee"];
 
   return (
-    <div className="bg-white p-4 rounded-md shadow-md">
+    <div className="bg-white px-4 py-24 rounded-md shadow-md">
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
       <h2 className="text-2xl font-bold mb-4">Employees</h2>
       <table className="min-w-full border-collapse block md:table">
