@@ -33,6 +33,7 @@ export default {
         tableBorder: "#dee2e6",
         arrowIconColor: "#949a9e",
         viewProfileIcon: "#adb5bd",
+        gray66: "#666666"
       },
       width: {
         // Custom width classes

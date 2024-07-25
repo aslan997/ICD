@@ -1,5 +1,7 @@
 import React from "react";
 import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import EmployeeSearchBar from "./EmployeeSearchBar";
 
 // Employee Data
 const employees = [
@@ -33,73 +35,88 @@ const employees = [
 const EmployeeTable = () => {
   const pageNames = ["Dashboard", "Employees"];
   const pageUrls = ["/dashboard", "/employee"];
- 
 
   return (
-    <div className="bg-white px-4 py-24 rounded-md shadow-md">
+    <div className="bg-white px-4 py-24 ">
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
-      <h2 className="text-2xl font-bold mb-4">Employees</h2>
-      <table className="min-w-full border-collapse block md:table">
-        <thead className="block md:table-header-group">
-          <tr className="border border-gray-300 md:table-row">
-            {[
-              "Full Name",
-              "Email Address",
-              "Employee ID",
-              "Grade",
-              "Line Manager",
-              "Status",
-              "Action",
-            ].map((header) => (
-              <th
-                key={header}
-                className="p-2 border border-gray-300 text-left block md:table-cell"
-              >
-                <div className="flex flex-col">
-                  <span>{header}</span>
-                  <input
-                    type="text"
-                    className="mt-1 p-1 border border-gray-300 rounded"
-                    placeholder="Search..."
-                  />
-                </div>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="block md:table-row-group">
-          {employees.map((employee, index) => (
-            <tr key={index} className="border border-gray-300 md:table-row">
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                {employee.name}
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                {employee.email}
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                {employee.id}
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                {employee.grade}
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                {employee.manager}
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                <span className="text-green-600">{employee.status}</span>
-              </td>
-              <td className="p-2 border border-gray-300 block md:table-cell">
-                <div className="flex items-center space-x-2">
-                  <button className="bg-blue-500 text-white p-1 rounded">
-                    Edit
-                  </button>
-                  <button className="bg-gray-300 p-1 rounded">Info</button>
-                </div>
-              </td>
+      <h2 className="text-2xl text-gold font-bold my-4 ">Employees</h2>
+      <EmployeeSearchBar />
+      <div className="rounded shadow-md p-5">
+        <table className="min-w-full border-collapse block md:table">
+          <thead className="block md:table-header-group">
+            <tr className="border border-gray-300 md:table-row">
+              {[
+                "Full Name",
+                "Email Address",
+                "Employee ID",
+                "Grade",
+                "Line Manager",
+                "Status",
+                "Action",
+              ].map((header) => (
+                <th
+                  key={header}
+                  className=" border border-gray-300 text-left block md:table-cell bg-tableHeader relative"
+                >
+                  <div className="flex flex-col">
+                    <span className="text-black border-b text-14 font-semibold p-1.5 border-tableBorder">
+                      {header}
+                    </span>
+                    <input
+                      type="text"
+                      className="m-1 p-1 border border-gray-300  rounded text-14 font-normal"
+                      placeholder="Search..."
+                    />
+                  </div>
+                  {header !== "Action" && (
+                    <div className="absolute top-0 bottom-0 right-0 px-2 py-2 flex -space-x-0.5">
+                      <Icon icon="icon-park:arrow-up" />
+                      <Icon icon="icon-park-outline:arrow-down" />
+                    </div>
+                  )}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="block md:table-row-group">
+            {employees.map((employee, index) => (
+              <tr key={index} className="border border-gray-300 md:table-row">
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  {employee.name}
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  {employee.email}
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  {employee.id}
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  {employee.grade}
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  {employee.manager}
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  <span className="text-green-600">{employee.status}</span>
+                </td>
+                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 block md:table-cell">
+                  <div className="flex items-center space-x-2">
+                    <button className="bg-white shadow-md  p-1 rounded">
+                      <Icon icon={"mage:edit-fill"} />
+                    </button>
+                    <button className="bg-white shadow-md  p-1 rounded">
+                      <Icon icon={"akar-icons:info-fill"} />
+                    </button>
+                    <button className="bg-white shadow-md  p-1 rounded">
+                      Edit Performance Form
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
