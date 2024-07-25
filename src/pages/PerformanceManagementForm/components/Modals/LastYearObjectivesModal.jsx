@@ -1,6 +1,6 @@
 import React from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dialog, Transition } from "@headlessui/react";
-import { Icon } from "@iconify/react";
 
 const data = [
   {
@@ -21,7 +21,7 @@ const data = [
   },
 ];
 
-const CreateObjectiveModal = ({ open, setOpen }) => {
+const LastYearObjectivesModal = ({ open, setOpen }) => {
   return (
     <Transition appear show={open} as={React.Fragment}>
       <Dialog as="div" className="relative z-10" onClose={() => setOpen(false)}>
@@ -54,7 +54,7 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
                     as="h3"
                     className="text-18 font-semibold leading-6"
                   >
-                    Add Objective
+                    Last Year's Objectives for Selection
                   </Dialog.Title>
                   <button
                     type="button"
@@ -79,41 +79,19 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
                   </button>
                 </div>
                 <div className="bg-white px-4 pb-4 sm:pb-4">
-                  <div className="mt-5">
-                    <label className="block text-14 font-500 mb-2">
-                      Objective Name: <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Objective Name"
-                      className="w-full px-3 py-2 border rounded text-14"
-                    />
-                    <label className="block text-14 font-500 mb-2 mt-4">
-                      Attachment (e.g. Supporting documents, files, photos,
-                      etc.):
-                    </label>
-                    <input
-                      type="file"
-                      className="w-full px-3 py-2 border rounded text-14"
-                    />
-                  </div>
-                  <div className="flex justify-start mt-4">
-                    <button className="bg-gold text-14 text-white px-4 py-2 rounded">
-                      Submit
-                    </button>
-                  </div>
                   <div className="mt-5 overflow-x-auto">
-                    <h3 className="text-14 font-500">Objective List</h3>
                     <table className="min-w-full divide-y divide-gray-200 mt-3">
                       <thead>
                         <tr className="bg-tableHeader">
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
-                            Obj. Code
+                            Objective Code
                           </th>
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
                             Objective
                           </th>
-                          <th className="px-4 text-14 font-head py-2 border border-tableBorder"></th>
+                          <th className="px-4 text-14 font-head py-2 border border-tableBorder text-center">
+                            Select
+                          </th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
@@ -125,18 +103,40 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
                             <td className="px-4 py-2 text-14 border border-tableBorder">
                               {res?.objective}
                             </td>
-                            <td className="px-4 py-2 text-14 border border-tableBorder">
-                              <button>
-                                <Icon
-                                  icon="ic:baseline-delete"
-                                  className="h-5 w-5"
+                            <td className="px-4 py-2 text-14 border border-tableBorder text-center">
+                              <label className="custom-checkbox">
+                                <input
+                                  type="checkbox"
+                                  id="customControlInline"
+                                  className="form-check-input h-4 w-4 transition duration-150 ease-in-out"
                                 />
-                              </button>
+                                <span></span>
+                              </label>
                             </td>
                           </tr>
                         ))}
+                        <tr>
+                          <td className="px-4 py-2 text-14 border border-tableBorder"></td>
+                          <td className="px-4 py-2 text-14 border border-tableBorder"></td>
+                          <td className="px-4 py-2 text-14 border border-tableBorder text-center">
+                            <span className="cursor-pointer hover:text-gold">
+                              (Select All)
+                            </span>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
+                  </div>
+                  <div className="flex w-full justify-end mt-4">
+                    <button className="text-14 mr-2 h-7 rounded bg-confirm text-white w-20">
+                      Confirm
+                    </button>
+                    <button
+                      className="text-14 h-7 rounded bg-cancel text-white w-20"
+                      onClick={() => setOpen(false)}
+                    >
+                      Cancel
+                    </button>
                   </div>
                 </div>
               </Dialog.Panel>
@@ -148,4 +148,4 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
   );
 };
 
-export default CreateObjectiveModal;
+export default LastYearObjectivesModal;
