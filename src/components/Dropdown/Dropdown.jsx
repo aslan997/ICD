@@ -16,6 +16,10 @@ const Dropdown = () => {
     }
   };
 
+  const closeDropdown = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
     return () => {
@@ -44,50 +48,103 @@ const Dropdown = () => {
       </button>
       {isOpen && (
         <div className="absolute z-1 left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg">
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Dashboard
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Performance Form
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             HR Report
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Calibration
           </Link>
           <hr />
           <Link
             to="/employee"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
           >
             Employees
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Grades
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Prospectives
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Competencies
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             PMS Cycles
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Employee Stages
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Employee Submissions
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Stage Management
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Proxy Access Management
           </Link>
-          <Link to="#" className="block px-4 py-2 text-14 hover:bg-gray-100">
+          <Link
+            to="#"
+            className="block px-4 py-2 text-14 hover:bg-gray-100"
+            onClick={closeDropdown}
+          >
             Audit Log
           </Link>
         </div>

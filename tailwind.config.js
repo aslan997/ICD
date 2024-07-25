@@ -32,6 +32,7 @@ export default {
         gold: "#BA973B",
         tableBorder: "#dee2e6",
         arrowIconColor: "#949a9e",
+        viewProfileIcon: "#adb5bd"
       },
       width: {
         // Custom width classes
