@@ -25,6 +25,7 @@ const LoginForm = () => {
     }),
     onSubmit: (values) => {
       // Handle form submission
+      localStorage.setItem("token", "abc");
       dispatch(loginUser(values));
       navigate("/objective/form");
     },

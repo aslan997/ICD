@@ -10,6 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/** Route for login form */}
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
 
         {/** Route for performance management page */}
