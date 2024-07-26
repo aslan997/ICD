@@ -2,55 +2,112 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
 
-// Employee Data
-const employees = [
+// Proxy Data
+const proxyData = [
   {
-    name: "Abdul Razzak Sharbuddeen",
-    email: "hr@icd.gov.ae",
-    id: "RE 0185",
-    grade: "A1",
-    manager: "Monaliza Dias",
-    status: "Active",
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
   },
   {
-    name: "Fatima Zahra Hassan",
-    email: "fzahra@xyz.com",
-    id: "FH 3251",
-    grade: "B2",
-    manager: "Abdul Razzak Sharbuddeen",
-    status: "Active",
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
   },
   {
-    name: "Omar Khalid Mohammed",
-    email: "okmohammed@mycompany.ae",
-    id: "OM 7890",
-    grade: "C3",
-    manager: "Monaliza Dias",
-    status: "Active",
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
   },
-  // Add more employee objects here (up to 96 more)
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
+  {
+    year: "2024",
+    employeeId: "RE 0185",
+    department: "Operations",
+    employeeName: "Abdul Shamsi",
+    proxyAccess: false,
+    proxyAccessStatus: "",
+  },
 ];
 
-const EmployeeTable = () => {
-  const pageNames = ["Dashboard", "Employees"];
-  const pageUrls = ["/dashboard", "/employee"];
+const ProxyAccessManagementTable = () => {
+  const pageNames = ["Dashboard", "Proxy Access Management"];
+  const pageUrls = ["/dashboard", "/manage-proxy-access"];
 
   return (
     <div className="bg-white px-4 py-24 ">
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
-      <h2 className="text-lg text-gold font-bold mt-4 mb-2">Employees</h2>
+      <h2 className="text-lg text-gold font-bold mt-4 mb-2">
+        Proxy Access Management
+      </h2>
       <SearchBar />
       <div className="rounded shadow-card overflow-x-auto p-5">
         <table className="min-w-[1450px] lg:min-w-full border-collapse table">
           <thead className="">
             <tr className="border border-gray-300 table-row">
               {[
-                "Full Name",
-                "Email Address",
+                "Year",
                 "Employee ID",
-                "Grade",
-                "Line Manager",
-                "Status",
+                "Department",
+                "Employee Name",
+                "Proxy Access",
+                "Proxy Access Status",
                 "Action",
               ].map((header) => (
                 <th
@@ -78,28 +135,37 @@ const EmployeeTable = () => {
             </tr>
           </thead>
           <tbody className="table-row-group">
-            {employees.map((employee, index) => (
+            {proxyData.map((data, index) => (
               <tr key={index} className="border border-gray-300 md:table-row">
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.name}
+                  {data.year}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.email}
+                  {data.employeeId}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.id}
+                  {data.department}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.grade}
+                  {data.employeeName}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.manager}
+                  <label className="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      id="customControlInline"
+                      className="form-check-input h-4 w-4 transition duration-150 ease-in-out"
+                    />
+                    <span></span>
+                  </label>
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  <span className="text-green-600">{employee.status}</span>
+                  <span className="text-green-600">
+                    {data.proxyAccessStatus}
+                  </span>
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  <div className="flex items-center space-x-2">
+                  {/* <div className="flex items-center space-x-2">
                     <button className="bg-white shadow-md  p-1 rounded">
                       <Icon icon={"mage:edit-fill"} />
                     </button>
@@ -109,7 +175,7 @@ const EmployeeTable = () => {
                     <button className="bg-white shadow-md  p-1 rounded">
                       Edit Performance Form
                     </button>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
             ))}
@@ -120,4 +186,4 @@ const EmployeeTable = () => {
   );
 };
 
-export default EmployeeTable;
+export default ProxyAccessManagementTable;

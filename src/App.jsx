@@ -6,6 +6,7 @@ import Employees from "./pages/Employees/Employees";
 import Profile from "./pages/Profile/Profile";
 import Prospective from "./pages/Prospectives/Prospectives";
 import EmployeeStages from "./pages/EmployeeStages/EmployeeStages";
+import ProxyAccessManagement from "./pages/ProxyAccessManagement/ProxyAccessManagement";
 
 function App() {
   return (
@@ -61,6 +62,16 @@ function App() {
           element={
             <ProtectedRoute>
               <Prospective />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for proxy access management */}
+        <Route
+          path="/manage-proxy-access"
+          element={
+            <ProtectedRoute>
+              <ProxyAccessManagement />
             </ProtectedRoute>
           }
         />

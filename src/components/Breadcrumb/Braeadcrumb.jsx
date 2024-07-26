@@ -10,7 +10,7 @@ const Braeadcrumb = ({ pageNames, pageUrls }) => {
             <li key={index} className="flex items-center">
               {index < pageNames?.length - 1 ? (
                 <>
-                  <a href={pageUrls[index]} className="text-black">
+                  <a href={pageUrls[index]} className="text-black text-14">
                     {name}
                   </a>
                   <Icon icon="tabler:slash" />
@@ -30,7 +30,7 @@ const Braeadcrumb = ({ pageNames, pageUrls }) => {
                   </svg> */}
                 </>
               ) : (
-                <span className="text-gray-500">{name}</span>
+                <span className="text-gray-500 text-14">{name}</span>
               )}
             </li>
           ))}
