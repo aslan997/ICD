@@ -1,14 +1,11 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
-import { Link } from "react-router-dom";
-import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
+import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
 
 const ProfileTable = () => {
   const pageNames = ["Dashboard", "Profile"];
   const pageUrls = ["/dashboard", "/profile"];
   return (
     <div className="px-4 py-24">
-      <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
+      <Breadcrumb pageNames={pageNames} pageUrls={pageUrls} />
       <div className="bg-white rounded shadow-card mt-4  p-4 w-full md:w-1/2">
         <h2 className="text-lg font-bold text-gold mb-4">User Profile</h2>
         <div className="overflow-x-auto">

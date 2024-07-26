@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
-const Braeadcrumb = ({ pageNames, pageUrls }) => {
+const Breadcrumb = ({ pageNames, pageUrls }) => {
   return (
     <div className="bg-gray-100 p-4 rounded-md shadow-sm">
       <nav className="text-gray-500" aria-label="Breadcrumb">
@@ -40,4 +40,4 @@ const Braeadcrumb = ({ pageNames, pageUrls }) => {
   );
 };
 
-export default Braeadcrumb;
+export default Breadcrumb;

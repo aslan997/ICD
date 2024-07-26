@@ -37,6 +37,7 @@ export default {
         arrowIconColor: "#949a9e",
         viewProfileIcon: "#adb5bd",
         gray66: "#666666",
+        green: "#35a989",
       },
       width: {
         // Custom width classes

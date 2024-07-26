@@ -1,7 +1,12 @@
-function EmployeeSearchBar() {
+import React from "react";
+
+const SearchBar = () => {
   return (
-    <div className="flex justify-end items-center p-4 pt-0">
-      <label htmlFor="search" className="mr-2 text-14 text-gray-700 font-medium">
+    <div className="flex justify-end items-center pb-4 pt-0">
+      <label
+        htmlFor="search"
+        className="mr-2 text-14 text-gray-700 font-medium"
+      >
         Search:
       </label>
       <div className="relative">
@@ -14,6 +19,6 @@ function EmployeeSearchBar() {
       </div>
     </div>
   );
-}
+};
 
-export default EmployeeSearchBar;
+export default SearchBar;

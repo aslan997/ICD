@@ -4,6 +4,7 @@ import PerformanceManagemenForm from "./pages/PerformanceManagementForm/Performa
 import Login from "./pages/Login/Login";
 import Employees from "./pages/Employees/Employees";
 import Profile from "./pages/Profile/Profile";
+import Prospective from "./pages/Prospectives/Prospectives";
 
 function App() {
   return (
@@ -39,6 +40,16 @@ function App() {
           element={
             <ProtectedRoute>
               <Employees />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for prospectives */}
+        <Route
+          path="/perspectives"
+          element={
+            <ProtectedRoute>
+              <Prospective />
             </ProtectedRoute>
           }
         />

@@ -92,11 +92,11 @@ const Dropdown = () => {
             Grades
           </Link>
           <Link
-            to="#"
+            to="/perspectives"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >
-            Prospectives
+            Perspectives
           </Link>
           <Link
             to="#"
