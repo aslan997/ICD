@@ -1,7 +1,7 @@
-import React from "react";
-import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
+
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SearchBar from "../../../components/SearchBar/SearchBar";
+import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
 
 // Employee Data
 const employees = [
@@ -38,10 +38,10 @@ const EmployeeTable = () => {
 
   return (
     <div className="bg-white px-4 py-24 ">
-      <Breadcrumb pageNames={pageNames} pageUrls={pageUrls} />
+      <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
       <h2 className="text-2xl text-gold font-bold my-4 ">Employees</h2>
       <SearchBar />
-      <div className="rounded shadow-card overflow-x-auto p-5">
+      <div className="rounded shadow-md overflow-x-auto p-5">
         <table className="min-w-[1450px] lg:min-w-full border-collapse table">
           <thead className="">
             <tr className="border border-gray-300 table-row">

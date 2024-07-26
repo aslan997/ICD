@@ -113,7 +113,7 @@ const Dropdown = () => {
             PMS Cycles
           </Link>
           <Link
-            to="#"
+            to="/employee_stages"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >

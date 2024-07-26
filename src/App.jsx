@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import Employees from "./pages/Employees/Employees";
 import Profile from "./pages/Profile/Profile";
 import Prospective from "./pages/Prospectives/Prospectives";
+import EmployeeStages from "./pages/EmployeeStages/EmployeeStages";
 
 function App() {
   return (
@@ -40,6 +41,16 @@ function App() {
           element={
             <ProtectedRoute>
               <Employees />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for employees stages */}
+        <Route
+          path="/employee_stages"
+          element={
+            <ProtectedRoute>
+              <EmployeeStages />
             </ProtectedRoute>
           }
         />
