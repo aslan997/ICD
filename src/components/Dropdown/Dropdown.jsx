@@ -85,7 +85,7 @@ const Dropdown = () => {
             Employees
           </Link>
           <Link
-            to="#"
+            to="/grades"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >
@@ -120,7 +120,7 @@ const Dropdown = () => {
             Employee Stages
           </Link>
           <Link
-            to="#"
+            to="/submissions"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >

@@ -6,6 +6,8 @@ import Employees from "./pages/Employees/Employees";
 import Profile from "./pages/Profile/Profile";
 import Prospective from "./pages/Prospectives/Prospectives";
 import EmployeeStages from "./pages/EmployeeStages/EmployeeStages";
+import Submissions from "./pages/Submissions/Submissions";
+import Grades from "./pages/Grades/Grades";
 import ProxyAccessManagement from "./pages/ProxyAccessManagement/ProxyAccessManagement";
 
 function App() {
@@ -62,6 +64,26 @@ function App() {
           element={
             <ProtectedRoute>
               <Prospective />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for submissions */}
+        <Route
+          path="/submissions"
+          element={
+            <ProtectedRoute>
+              <Submissions />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for grade management */}
+        <Route
+          path="/grades"
+          element={
+            <ProtectedRoute>
+              <Grades />
             </ProtectedRoute>
           }
         />
