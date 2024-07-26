@@ -30,7 +30,7 @@ const SubmissionTable = () => {
   return (
     <div className="bg-white px-4 py-24 ">
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
-      <h2 className="text-2xl text-gold font-bold my-4 ">Submissions</h2>
+      <h2 className="text-lg text-gold font-bold mt-4 mb-2">Submissions</h2>
       <SearchBar />
       <div className="rounded shadow-card overflow-x-auto p-5">
         <table className="min-w-[1450px] lg:min-w-full border-collapse table">
