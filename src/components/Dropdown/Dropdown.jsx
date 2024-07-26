@@ -31,7 +31,7 @@ const Dropdown = () => {
     <div className="relative dropdown" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center bg-white text-14 py-2 px-4 rounded-md shadow-md focus:outline-none"
+        className="flex items-center bg-white text-14 py-2 px-4 rounded-md shadow-menu focus:outline-none"
       >
         <span className="mr-1">
           <Icon icon="charm:menu-hamburger" />
