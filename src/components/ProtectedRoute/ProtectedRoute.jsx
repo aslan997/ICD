@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "../Header/Header";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate();
@@ -9,9 +10,10 @@ const ProtectedRoute = ({ children }) => {
     navigate("/login");
   }
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      {children}
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
   );
 };

@@ -20,7 +20,8 @@ export default {
         tableHeader: "#f9f9f9",
         loginScreenBg: "#363232",
         confirm: "#35a989",
-        cancel: "#f16c69"
+        cancel: "#f16c69",
+        footer: "#fafafa",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -50,6 +51,7 @@ export default {
         cace91: "#cace91",
         c1efc8: "#c1efc8",
         c9edfb: "#c9edfb",
+        footer: "rgba(148, 154, 158, 0.2)",
       },
       height: {
         headerYearButton: "30px",
@@ -63,6 +65,7 @@ export default {
       },
       boxShadow: {
         card: "0 2px 3px 2px rgba(0, 0, 0, 0.08)",
+        footer: "0px -1px 2px 0px rgba(0, 0, 0, 0.05)",
       },
     },
   },
