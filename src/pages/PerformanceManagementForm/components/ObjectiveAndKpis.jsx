@@ -26,7 +26,7 @@ const ObjectiveAndKpis = () => {
             {isSameYear && (
               <div className="items-center inline-flex sm:hidden flex-wrap">
                 <button
-                  className="bg-gold text-14 h-7 text-white mr-2 rounded w-52 mt-2"
+                  className="bg-gold text-14 h-7 text-white mr-2 rounded w-52 mt-2 shadow-button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpenObjectiveModal(true);
@@ -35,7 +35,7 @@ const ObjectiveAndKpis = () => {
                   Copy Last Year's Objectives
                 </button>
                 <button
-                  className="bg-gold text-14 h-7 text-white mr-2 flex items-center mt-2 justify-center rounded w-100"
+                  className="bg-gold text-14 h-7 text-white mr-2 flex items-center mt-2 justify-center rounded w-100 shadow-button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpen(true);
@@ -52,7 +52,7 @@ const ObjectiveAndKpis = () => {
             {isSameYear && (
               <div className="items-center hidden sm:inline-flex">
                 <button
-                  className="bg-gold text-14 h-7 text-white mx-2 rounded w-52"
+                  className="bg-gold text-14 h-7 text-white mx-2 rounded w-52 shadow-button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpenObjectiveModal(true);
@@ -61,7 +61,7 @@ const ObjectiveAndKpis = () => {
                   Copy Last Year's Objectives
                 </button>
                 <button
-                  className="bg-gold text-14 h-7 text-white mr-2 flex items-center justify-center rounded w-100"
+                  className="bg-gold text-14 h-7 text-white mr-2 flex items-center justify-center rounded w-100 shadow-button"
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpen(true);

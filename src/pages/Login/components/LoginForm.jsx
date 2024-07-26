@@ -101,7 +101,7 @@ const LoginForm = () => {
             </div>
             <button
               type="submit"
-              className="btn btn-primary w-auto bg-gold text-white py-2 px-4 rounded-inputsm text-14"
+              className="btn btn-primary w-auto bg-gold text-white py-2 px-4 rounded-inputsm text-14 shadow-button"
             >
               {loading ? "Logging in..." : "Log In"}
             </button>

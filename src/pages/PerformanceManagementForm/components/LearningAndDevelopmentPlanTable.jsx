@@ -71,7 +71,7 @@ const LearningAndDevelopmentPlanTable = () => {
           </span>
         </h1>
         <button
-          className="w-100 h-7 bg-gold text-white rounded text-14 flex items-center justify-center mt-2 sm:mt-0"
+          className="w-100 h-7 bg-gold text-white rounded text-14 flex items-center justify-center mt-2 sm:mt-0 shadow-button"
           onClick={handleAddRow}
         >
           <Icon icon="mingcute:add-fill" className="text-white mr-1" />

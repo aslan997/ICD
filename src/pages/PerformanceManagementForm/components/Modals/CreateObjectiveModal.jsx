@@ -98,7 +98,7 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
                     />
                   </div>
                   <div className="flex justify-start mt-4">
-                    <button className="bg-gold text-14 text-white px-4 py-2 rounded">
+                    <button className="bg-gold text-14 text-white px-4 py-2 rounded shadow-button">
                       Submit
                     </button>
                   </div>

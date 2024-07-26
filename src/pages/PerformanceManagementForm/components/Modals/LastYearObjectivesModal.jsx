@@ -128,11 +128,11 @@ const LastYearObjectivesModal = ({ open, setOpen }) => {
                     </table>
                   </div>
                   <div className="flex w-full justify-end mt-4">
-                    <button className="text-14 mr-2 h-7 rounded bg-confirm text-white w-20">
+                    <button className="text-14 mr-2 h-7 rounded bg-confirm text-white w-20 shadow-button">
                       Confirm
                     </button>
                     <button
-                      className="text-14 h-7 rounded bg-cancel text-white w-20"
+                      className="text-14 h-7 rounded bg-cancel text-white w-20 shadow-button"
                       onClick={() => setOpen(false)}
                     >
                       Cancel
