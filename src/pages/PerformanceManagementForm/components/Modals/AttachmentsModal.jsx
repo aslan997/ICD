@@ -1,27 +1,17 @@
 import React from "react";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dialog, Transition } from "@headlessui/react";
+import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 const data = [
   {
-    objective_code: "1",
-    objective: "2024 Michael Testing 2024 Michael Testing",
-  },
-  {
-    objective_code: "2",
-    objective: "Objective 2",
-  },
-  {
-    objective_code: "3",
-    objective: "Objective 3",
-  },
-  {
-    objective_code: "4",
-    objective: "Objective 4",
+    createdDate: "02-Jul-2024 01:11 PM",
+    stage: "Mid-Year Review",
+    filename: "1719911467_logo_dark.png",
   },
 ];
 
-const LastYearObjectivesModal = ({ open, setOpen }) => {
+const AttachmentsModal = ({ open, setOpen }) => {
   return (
     <Transition appear show={open} as={React.Fragment}>
       <Dialog as="div" className="relative z-10" onClose={() => setOpen(false)}>
@@ -54,7 +44,7 @@ const LastYearObjectivesModal = ({ open, setOpen }) => {
                     as="h3"
                     className="text-18 font-semibold leading-6"
                   >
-                    Last Year's Objectives for Selection
+                    Attachments
                   </Dialog.Title>
                   <button
                     type="button"
@@ -79,18 +69,31 @@ const LastYearObjectivesModal = ({ open, setOpen }) => {
                   </button>
                 </div>
                 <div className="bg-white px-4 pb-4 sm:pb-4">
+                  <div className="mt-5">
+                    <label className="block text-14 font-500 mb-2 mt-4">
+                      Select Attachments:{" "}
+                      <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="file"
+                      className="w-full px-3 py-2 border rounded text-14"
+                    />
+                  </div>
                   <div className="mt-5 overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200 mt-3">
                       <thead>
                         <tr className="bg-tableHeader">
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
-                            Objective Code
+                            Created Date
                           </th>
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
-                            Objective
+                            Stage
                           </th>
-                          <th className="px-4 text-14 font-head py-2 border border-tableBorder text-center">
-                            Select
+                          <th className="px-4 text-14 font-head py-2 border border-tableBorder">
+                            Filename
+                          </th>
+                          <th className="px-4 text-14 font-head py-2 border border-tableBorder">
+                            Action
                           </th>
                         </tr>
                       </thead>
@@ -98,46 +101,47 @@ const LastYearObjectivesModal = ({ open, setOpen }) => {
                         {data?.map((res, id) => (
                           <tr key={id}>
                             <td className="px-4 py-2 text-14 border border-tableBorder">
-                              {res?.objective_code}
+                              {res?.createdDate}
                             </td>
                             <td className="px-4 py-2 text-14 border border-tableBorder">
-                              {res?.objective}
+                              {res?.stage}
                             </td>
-                            <td className="px-4 py-2 text-14 border border-tableBorder text-center">
-                              <label className="custom-checkbox">
-                                <input
-                                  type="checkbox"
-                                  id="customControlInline"
-                                  className="form-check-input h-4 w-4 transition duration-150 ease-in-out"
+                            <td className="px-4 py-2 text-14 border border-tableBorder">
+                              <span className="inline-flex items-center">
+                                <Icon
+                                  icon="entypo:attachment"
+                                  className="mr-1"
                                 />
-                                <span></span>
-                              </label>
+                                <Link to="" className="hover:text-gold">
+                                  {res?.filename}
+                                </Link>
+                              </span>
+                            </td>
+                            <td className="px-4 py-2 text-14 border border-tableBorder">
+                              <button>
+                                <Icon
+                                  icon="ic:baseline-delete"
+                                  className="h-5 w-5"
+                                />
+                              </button>
                             </td>
                           </tr>
                         ))}
-                        <tr>
-                          <td className="px-4 py-2 text-14 border border-tableBorder"></td>
-                          <td className="px-4 py-2 text-14 border border-tableBorder"></td>
-                          <td className="px-4 py-2 text-14 border border-tableBorder text-center">
-                            <span className="cursor-pointer hover:text-gold">
-                              (Select All)
-                            </span>
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
                   </div>
-                  <div className="flex w-full justify-end mt-4">
-                    <button className="text-14 mr-2 h-7 rounded bg-confirm text-white w-20 shadow-button">
-                      Confirm
-                    </button>
-                    <button
-                      className="text-14 h-7 rounded bg-cancel text-white w-20 shadow-button"
-                      onClick={() => setOpen(false)}
-                    >
-                      Cancel
-                    </button>
-                  </div>
+                </div>
+                <hr />
+                <div className="flex justify-start p-4">
+                  <button className="bg-gold text-14 text-white px-4 py-2 rounded shadow-button mr-2">
+                    Update
+                  </button>
+                  <button
+                    className="bg-btnSecondary text-14 text-white px-4 py-2 rounded shadow-button"
+                    onClick={() => setOpen(false)}
+                  >
+                    Close
+                  </button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -148,4 +152,4 @@ const LastYearObjectivesModal = ({ open, setOpen }) => {
   );
 };
 
-export default LastYearObjectivesModal;
+export default AttachmentsModal;

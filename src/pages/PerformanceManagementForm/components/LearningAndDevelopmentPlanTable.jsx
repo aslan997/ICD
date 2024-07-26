@@ -1,10 +1,12 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import AttachmentsModal from "./Modals/AttachmentsModal";
 
 const LearningAndDevelopmentPlanTable = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [height, setHeight] = useState("0px");
   const contentRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   const [employees, setEmployees] = useState([
     {
@@ -50,12 +52,14 @@ const LearningAndDevelopmentPlanTable = () => {
   useLayoutEffect(() => {
     updateHeight();
     // Ensure that the height is recalculated when `employees` change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, employees]);
 
   useEffect(() => {
     const handleResize = () => updateHeight();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -154,11 +158,19 @@ const LearningAndDevelopmentPlanTable = () => {
                 <td className="px-4 py-2 text-14 border border-tableBorder">
                   <span className="inline-flex items-center">
                     {employee.attachment ? (
-                      <Icon icon="entypo:attachment" className="mr-1" />
+                      <Icon
+                        icon="entypo:attachment"
+                        className="mr-1 cursor-pointer hover:text-gold"
+                        onClick={() => setOpen(true)}
+                      />
                     ) : (
                       ""
                     )}
-                    <Icon icon="mingcute:add-fill" />
+                    <Icon
+                      icon="mingcute:add-fill"
+                      className="cursor-pointer hover:text-gold"
+                      onClick={() => setOpen(true)}
+                    />
                   </span>
                 </td>
                 <td className="px-4 py-2 text-14 border border-tableBorder">
@@ -175,6 +187,7 @@ const LearningAndDevelopmentPlanTable = () => {
           </tbody>
         </table>
       </div>
+      <AttachmentsModal open={open} setOpen={setOpen} />
     </div>
   );
 };

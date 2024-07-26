@@ -49,7 +49,7 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-4xl">
-                <div className="flex justify-between items-center p-4 bg-tableHeader">
+                <div className="flex justify-between items-center p-4 bg-tableHeader border-b">
                   <Dialog.Title
                     as="h3"
                     className="text-18 font-semibold leading-6"
@@ -108,7 +108,7 @@ const CreateObjectiveModal = ({ open, setOpen }) => {
                       <thead>
                         <tr className="bg-tableHeader">
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
-                            Obj. Code
+                            Objective Code
                           </th>
                           <th className="px-4 text-14 font-head py-2 border border-tableBorder">
                             Objective

@@ -2,35 +2,6 @@ import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 
-// Employee Data
-const employees = [
-  {
-    name: "Abdul Razzak Sharbuddeen",
-    email: "hr@icd.gov.ae",
-    id: "RE 0185",
-    grade: "A1",
-    manager: "Monaliza Dias",
-    status: "Active",
-  },
-  {
-    name: "Fatima Zahra Hassan",
-    email: "fzahra@xyz.com",
-    id: "FH 3251",
-    grade: "B2",
-    manager: "Abdul Razzak Sharbuddeen",
-    status: "Active",
-  },
-  {
-    name: "Omar Khalid Mohammed",
-    email: "okmohammed@mycompany.ae",
-    id: "OM 7890",
-    grade: "C3",
-    manager: "Monaliza Dias",
-    status: "Active",
-  },
-  // Add more employee objects here (up to 96 more)
-];
-
 // Perspective Data
 const perspectiveData = [
   {

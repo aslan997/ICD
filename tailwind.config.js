@@ -22,6 +22,7 @@ export default {
         confirm: "#35a989",
         cancel: "#f16c69",
         footer: "#fafafa",
+        btnSecondary: "#6c757d"
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -53,6 +54,7 @@ export default {
         c1efc8: "#c1efc8",
         c9edfb: "#c9edfb",
         footer: "rgba(148, 154, 158, 0.2)",
+        primary: "#dee2e6"
       },
       height: {
         headerYearButton: "30px",
