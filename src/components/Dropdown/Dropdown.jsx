@@ -99,14 +99,14 @@ const Dropdown = () => {
             Perspectives
           </Link>
           <Link
-            to="#"
+            to="/competencies"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >
             Competencies
           </Link>
           <Link
-            to="#"
+            to="/pms_year"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >

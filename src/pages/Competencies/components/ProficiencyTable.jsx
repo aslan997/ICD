@@ -1,56 +1,65 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SearchBar from "../../../components/SearchBar/SearchBar";
-import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
 
 // Employee Data
 const employees = [
   {
-    name: "Abdul Razzak Sharbuddeen",
-    email: "hr@icd.gov.ae",
-    id: "RE 0185",
-    grade: "A1",
-    manager: "Monaliza Dias",
-    status: "Active",
+    competency: "Drive For Results",
+    grade: "A1, A2",
+    proficiency: "Executing",
+    indicators:
+      "Creates an environment that encourages initiative keeping in mind long-term objectives and business environment; identifies the resource constraints or obstacles that may inhibit the attainment of results",
   },
   {
-    name: "Fatima Zahra Hassan",
-    email: "fzahra@xyz.com",
-    id: "FH 3251",
-    grade: "B2",
-    manager: "Abdul Razzak Sharbuddeen",
-    status: "Active",
+    competency: "Drive For Results",
+    grade: "A1, A2",
+    proficiency: "Executing",
+    indicators:
+      "Creates an environment that encourages initiative keeping in mind long-term objectives and business environment; identifies the resource constraints or obstacles that may inhibit the attainment of results",
   },
   {
-    name: "Omar Khalid Mohammed",
-    email: "okmohammed@mycompany.ae",
-    id: "OM 7890",
-    grade: "C3",
-    manager: "Monaliza Dias",
-    status: "Active",
+    competency: "Drive For Results",
+    grade: "A1, A2",
+    proficiency: "Executing",
+    indicators:
+      "Creates an environment that encourages initiative keeping in mind long-term objectives and business environment; identifies the resource constraints or obstacles that may inhibit the attainment of results",
+  },
+  {
+    competency: "Drive For Results",
+    grade: "A1, A2",
+    proficiency: "Executing",
+    indicators:
+      "Creates an environment that encourages initiative keeping in mind long-term objectives and business environment; identifies the resource constraints or obstacles that may inhibit the attainment of results",
+  },
+  {
+    competency: "Drive For Results",
+    grade: "A1, A2",
+    proficiency: "Executing",
+    indicators:
+      "Creates an environment that encourages initiative keeping in mind long-term objectives and business environment; identifies the resource constraints or obstacles that may inhibit the attainment of results",
   },
   // Add more employee objects here (up to 96 more)
 ];
 
-const EmployeeTable = () => {
-  const pageNames = ["Dashboard", "Employees"];
-  const pageUrls = ["/dashboard", "/employee"];
-
+const ProficiencyTable = () => {
   return (
-    <div className="bg-white px-4 py-24 ">
-      <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
-      <h2 className="text-lg text-gold font-bold mt-4 mb-2">Employees</h2>
-      <SearchBar />
+    <div className="bg-white px-4 pb-24">
+      <h2 className="text-lg text-gold font-bold mt-4 mb-2">Proficiency</h2>
+      <div className="w-full justify-end flex flex-col items-start space-x-0 xs:inline-flex xs:flex-row xs:items-center xs:space-x-2">
+        <SearchBar />
+        <button className="text-14 h-btnAdd text-white rounded shadow-button px-2 bg-btnAdd hover:bg-btnAddHover mb-4">
+          Add New
+        </button>
+      </div>
       <div className="rounded shadow-card overflow-x-auto p-5">
         <table className="min-w-[1450px] lg:min-w-full border-collapse table">
           <thead className="">
             <tr className="border border-gray-300 table-row">
               {[
-                "Full Name",
-                "Email Address",
-                "Employee ID",
+                "Competency",
                 "Grade",
-                "Line Manager",
-                "Status",
+                "Proficiency",
+                "Behavioural Indicators",
                 "Action",
               ].map((header) => (
                 <th
@@ -81,35 +90,21 @@ const EmployeeTable = () => {
             {employees.map((employee, index) => (
               <tr key={index} className="border border-gray-300 md:table-row">
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.name}
-                </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.email}
-                </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.id}
+                  {employee.competency}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   {employee.grade}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.manager}
+                  {employee.proficiency}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  <span className="text-green-600">{employee.status}</span>
+                  {employee.indicators}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  <div className="flex items-center space-x-2">
-                    <button className="bg-white shadow-md  p-1 rounded">
-                      <Icon icon={"mage:edit-fill"} />
-                    </button>
-                    <button className="bg-white shadow-md  p-1 rounded">
-                      <Icon icon={"akar-icons:info-fill"} />
-                    </button>
-                    <button className="bg-white shadow-md  p-1 rounded px-2">
-                      Edit Performance Form
-                    </button>
-                  </div>
+                  <button className="bg-white shadow-md  p-1 rounded">
+                    <Icon icon={"mage:edit-fill"} />
+                  </button>
                 </td>
               </tr>
             ))}
@@ -120,4 +115,4 @@ const EmployeeTable = () => {
   );
 };
 
-export default EmployeeTable;
+export default ProficiencyTable;

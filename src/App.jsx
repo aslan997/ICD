@@ -9,6 +9,8 @@ import EmployeeStages from "./pages/EmployeeStages/EmployeeStages";
 import Submissions from "./pages/Submissions/Submissions";
 import Grades from "./pages/Grades/Grades";
 import ProxyAccessManagement from "./pages/ProxyAccessManagement/ProxyAccessManagement";
+import Competencies from "./pages/Competencies/Competencies";
+import PMSCycles from "./pages/PMSCycles/PMSCycles";
 
 function App() {
   return (
@@ -94,6 +96,26 @@ function App() {
           element={
             <ProtectedRoute>
               <ProxyAccessManagement />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for proxy access management */}
+        <Route
+          path="/competencies"
+          element={
+            <ProtectedRoute>
+              <Competencies />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for pms cycles */}
+        <Route
+          path="/pms_year"
+          element={
+            <ProtectedRoute>
+              <PMSCycles />
             </ProtectedRoute>
           }
         />

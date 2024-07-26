@@ -5,54 +5,52 @@ import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
 // Employee Data
 const employees = [
   {
-    name: "Abdul Razzak Sharbuddeen",
-    email: "hr@icd.gov.ae",
-    id: "RE 0185",
-    grade: "A1",
-    manager: "Monaliza Dias",
-    status: "Active",
+    year: "2024",
+    description: "",
+    status: "",
   },
   {
-    name: "Fatima Zahra Hassan",
-    email: "fzahra@xyz.com",
-    id: "FH 3251",
-    grade: "B2",
-    manager: "Abdul Razzak Sharbuddeen",
-    status: "Active",
+    year: "2022",
+    description: "",
+    status: "",
   },
   {
-    name: "Omar Khalid Mohammed",
-    email: "okmohammed@mycompany.ae",
-    id: "OM 7890",
-    grade: "C3",
-    manager: "Monaliza Dias",
-    status: "Active",
+    year: "2023",
+    description: "",
+    status: "",
+  },
+  {
+    year: "2021",
+    description: "",
+    status: "",
+  },
+  {
+    year: "2020",
+    description: "",
+    status: "",
   },
   // Add more employee objects here (up to 96 more)
 ];
 
-const EmployeeTable = () => {
-  const pageNames = ["Dashboard", "Employees"];
-  const pageUrls = ["/dashboard", "/employee"];
+const PMSYearTable = () => {
+  const pageNames = ["Dashboard", "PMS Cycles"];
+  const pageUrls = ["/dashboard", "/pms_year"];
 
   return (
-    <div className="bg-white px-4 py-24 ">
+    <div className="bg-white px-4 pt-24 pb-4 ">
       <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
-      <h2 className="text-lg text-gold font-bold mt-4 mb-2">Employees</h2>
-      <SearchBar />
+      <h2 className="text-lg text-gold font-bold mt-4 mb-2">PMS Years</h2>
+      <div className="w-full justify-end flex flex-col items-start space-x-0 xs:inline-flex xs:flex-row xs:items-center xs:space-x-2">
+        <SearchBar />
+        <button className="text-14 h-btnAdd text-white rounded shadow-button px-2 bg-btnAdd hover:bg-btnAddHover mb-4">
+          Add New
+        </button>
+      </div>
       <div className="rounded shadow-card overflow-x-auto p-5">
         <table className="min-w-[1450px] lg:min-w-full border-collapse table">
           <thead className="">
             <tr className="border border-gray-300 table-row">
-              {[
-                "Full Name",
-                "Email Address",
-                "Employee ID",
-                "Grade",
-                "Line Manager",
-                "Status",
-                "Action",
-              ].map((header) => (
+              {["Year", "Description", "Status", "Action"].map((header) => (
                 <th
                   key={header}
                   className=" border border-gray-300 text-left table-cell bg-tableHeader relative"
@@ -81,33 +79,25 @@ const EmployeeTable = () => {
             {employees.map((employee, index) => (
               <tr key={index} className="border border-gray-300 md:table-row">
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.name}
+                  {employee.year}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.email}
+                  {employee.description}
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.id}
-                </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.grade}
-                </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  {employee.manager}
-                </td>
-                <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
-                  <span className="text-green-600">{employee.status}</span>
+                  <Icon icon="fa-solid:check" className="text-green" />
                 </td>
                 <td className="p-1.5 text-14 font-normal hover:bg-tableHeader border border-gray-300 table-cell">
                   <div className="flex items-center space-x-2">
-                    <button className="bg-white shadow-md  p-1 rounded">
+                    <button className="bg-white shadow-button  p-1 rounded">
                       <Icon icon={"mage:edit-fill"} />
                     </button>
-                    <button className="bg-white shadow-md  p-1 rounded">
+                    <button className="bg-white shadow-button  p-1 rounded">
                       <Icon icon={"akar-icons:info-fill"} />
                     </button>
-                    <button className="bg-white shadow-md  p-1 rounded px-2">
-                      Edit Performance Form
+                    <button className="px-2 inline-flex items-center bg-white shadow-button  p-1 rounded">
+                      <Icon icon="fa-solid:copy" className="mr-1" /> Skip
+                      Mid-Year
                     </button>
                   </div>
                 </td>
@@ -120,4 +110,4 @@ const EmployeeTable = () => {
   );
 };
 
-export default EmployeeTable;
+export default PMSYearTable;

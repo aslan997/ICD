@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'xs': '426px',
+      },
       fontSize: {
         18: "var(--font-size-heading)",
         14: "var(--font-size-para)",
@@ -22,7 +25,9 @@ export default {
         confirm: "#35a989",
         cancel: "#f16c69",
         footer: "#fafafa",
-        btnSecondary: "#6c757d"
+        btnSecondary: "#6c757d",
+        btnAdd: "#29bbe3",
+        btnAddHover: "#1caed6",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -54,11 +59,12 @@ export default {
         c1efc8: "#c1efc8",
         c9edfb: "#c9edfb",
         footer: "rgba(148, 154, 158, 0.2)",
-        primary: "#dee2e6"
+        primary: "#dee2e6",
       },
       height: {
         headerYearButton: "30px",
         26: "26px",
+        btnAdd: "35px"
       },
       borderRadius: {
         inputsm: "0.25rem",
