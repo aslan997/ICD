@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "@iconify/react";
+import { Editor } from "@tinymce/tinymce-react";
 
 const EditableCell = ({ initialValue, onSave, title, type }) => {
   // State to track if the cell is in editing mode
@@ -15,6 +16,8 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
   const inputRef = useRef(null); // Reference to the input element
   const wrapperRef = useRef(null); // Reference to the cell wrapper element
   const spanRef = useRef(null); // Reference to the span inside cell
+  const editorRef = useRef();
+  const contentRef = useRef();
 
   const portalRoot = document.getElementById("portal-root"); // Reference to the portal root element
 
@@ -65,7 +68,7 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
 
   // Function to handle clicks outside the editor popup
   const handleClickOutside = (event) => {
-    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+    if (editorRef?.current && !editorRef?.current.contains(event.target)) {
       setIsEditing(false);
     }
   };
@@ -118,13 +121,27 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
         );
       case "textarea":
         return (
-          <textarea
-            ref={inputRef}
-            value={tempValue}
-            rows={8}
-            onChange={(e) => setTempValue(e.target.value)}
-            className="border p-1 mr-2 mb-4 h-24"
-          />
+          <div
+            className={`per-emp-com-editor min-w-full overflow-x-auto transition-height duration-500 ease-in-out`}
+          >
+            <div className="mt-3 mb-3">
+              <Editor
+                ref={contentRef}
+                apiKey="ymt5zm95gau7yhvnx01rqdt6rpyigimdru05sq0b3u353bje"
+                initialValue="<p>This is the initial content of the editor.</p>"
+                init={{
+                  height: 300,
+                  width: 400,
+                  menubar: false,
+                  selector: "textarea", // Not required if directly replacing <textarea>
+                  plugins: "lists textcolor colorpicker",
+                  toolbar: " bold | numlist bullist",
+                  content_style:
+                    "body { font-family: 'Poppins', sans-serif; font-size: 14px }",
+                }}
+              />
+            </div>
+          </div>
         );
       case "select":
         return (
@@ -175,6 +192,7 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
           <div
             className="fixed z-1 min-w-36 bg-white border border-gray-300 rounded shadow-lg flex flex-col items-start text-14"
             style={{ left: position.left, top: position.top }}
+            ref={editorRef}
           >
             <div className="w-full border-b mb-2 py-1 px-4 bg-gray-200">
               <p>{`Please enter ${title}`}</p>
@@ -185,7 +203,7 @@ const EditableCell = ({ initialValue, onSave, title, type }) => {
                 {/* Save button */}
                 <button
                   onClick={handleSave}
-                  className="bg-green-500 text-white p-1 rounded mr-1"
+                  className="bg-green text-white p-1 rounded mr-1"
                 >
                   <Icon icon="material-symbols:check" />
                 </button>
