@@ -11,6 +11,7 @@ import Grades from "./pages/Grades/Grades";
 import ProxyAccessManagement from "./pages/ProxyAccessManagement/ProxyAccessManagement";
 import Competencies from "./pages/Competencies/Competencies";
 import PMSCycles from "./pages/PMSCycles/PMSCycles";
+import StateManagement from "./pages/StateManagement/StateManagement";
 
 function App() {
   return (
@@ -116,6 +117,16 @@ function App() {
           element={
             <ProtectedRoute>
               <PMSCycles />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for state management */}
+        <Route
+          path="/manage-employee-stages"
+          element={
+            <ProtectedRoute>
+              <StateManagement />
             </ProtectedRoute>
           }
         />

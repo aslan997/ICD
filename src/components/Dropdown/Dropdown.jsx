@@ -127,7 +127,7 @@ const Dropdown = () => {
             Employee Submissions
           </Link>
           <Link
-            to="#"
+            to="/manage-employee-stages"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >

@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SearchBar from "../../../components/SearchBar/SearchBar";
-import Braeadcrumb from "../../../components/Breadcrumb/Braeadcrumb";
+import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
 
 // Employee Data
 const employees = [
@@ -21,7 +21,7 @@ const GradeTable = () => {
 
   return (
     <div className="bg-white px-4 py-24 ">
-      <Braeadcrumb pageNames={pageNames} pageUrls={pageUrls} />
+      <Breadcrumb pageNames={pageNames} pageUrls={pageUrls} />
       <h2 className="text-lg text-gold font-bold mt-4 mb-2">
         Grade Management
       </h2>

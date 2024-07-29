@@ -28,6 +28,7 @@ export default {
         btnSecondary: "#6c757d",
         btnAdd: "#29bbe3",
         btnAddHover: "#1caed6",
+        btnMoveBackPrimary: "#2a3142"
       },
       colors: {
         primary: "var(--font-color-heading)",

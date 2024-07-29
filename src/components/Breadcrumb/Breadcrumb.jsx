@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
 
 const Breadcrumb = ({ pageNames, pageUrls }) => {
   return (
@@ -10,27 +9,13 @@ const Breadcrumb = ({ pageNames, pageUrls }) => {
             <li key={index} className="flex items-center">
               {index < pageNames?.length - 1 ? (
                 <>
-                  <a href={pageUrls[index]} className="text-black">
+                  <a href={pageUrls[index]} className="text-black text-14">
                     {name}
                   </a>
                   <Icon icon="tabler:slash" />
-                  {/* <svg
-                    className="w-4 h-4 mx-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    ></path>
-                  </svg> */}
                 </>
               ) : (
-                <span className="text-gray-500">{name}</span>
+                <span className="text-gray-500 text-14">{name}</span>
               )}
             </li>
           ))}
