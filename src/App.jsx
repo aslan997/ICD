@@ -12,6 +12,7 @@ import ProxyAccessManagement from "./pages/ProxyAccessManagement/ProxyAccessMana
 import Competencies from "./pages/Competencies/Competencies";
 import PMSCycles from "./pages/PMSCycles/PMSCycles";
 import StateManagement from "./pages/StateManagement/StateManagement";
+import AuditLog from "./pages/AuditLog/AuditLog";
 
 function App() {
   return (
@@ -127,6 +128,16 @@ function App() {
           element={
             <ProtectedRoute>
               <StateManagement />
+            </ProtectedRoute>
+          }
+        />
+
+        {/** Route for audit logs */}
+        <Route
+          path="/hr-dashboard"
+          element={
+            <ProtectedRoute>
+              <AuditLog />
             </ProtectedRoute>
           }
         />

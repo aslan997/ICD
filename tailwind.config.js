@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
+  ],
   theme: {
     extend: {
       screens: {
-        'xs': '426px',
+        xs: "426px",
       },
       fontSize: {
         18: "var(--font-size-heading)",
@@ -28,7 +32,7 @@ export default {
         btnSecondary: "#6c757d",
         btnAdd: "#29bbe3",
         btnAddHover: "#1caed6",
-        btnMoveBackPrimary: "#2a3142"
+        btnMoveBackPrimary: "#2a3142",
       },
       colors: {
         primary: "var(--font-color-heading)",
@@ -65,7 +69,7 @@ export default {
       height: {
         headerYearButton: "30px",
         26: "26px",
-        btnAdd: "35px"
+        btnAdd: "35px",
       },
       borderRadius: {
         inputsm: "0.25rem",

@@ -141,7 +141,7 @@ const Dropdown = () => {
             Proxy Access Management
           </Link>
           <Link
-            to="#"
+            to="/hr-dashboard"
             className="block px-4 py-2 text-14 hover:bg-gray-100"
             onClick={closeDropdown}
           >
